@@ -64,15 +64,23 @@
           style="position: absolute; bottom: 50px"
         >
           <!-- To Do Form -->
-          <form action="">
+          <!-- we are sending data to server that is why we are using method post -->
+          <form action="{% url 'addTask' %}" method="POST">
+            <!-- Cross-Site Request Forgery -->
+            {% csrf_token %}
             <div class="form-group">
               <span style="display: flex">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Add a task"
+                  name="task"
                 />
-                <button class="btn btn-primary" style="width: 200px">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="width: 200px"
+                >
                   <i class="fa fa-plus"></i> Add
                 </button>
               </span>
