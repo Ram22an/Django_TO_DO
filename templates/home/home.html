@@ -24,7 +24,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/homestyle.css' %}" />
   </head>
   <body>
     <div class="container">
@@ -34,9 +34,11 @@
         <p class="text-muted">{% now "jS F Y" %}</p>
         <div class="col-md-7 col-lg-7" style="height: 450px; overflow: scroll">
           <!-- List of all the tasks for the day -->
+          {% for task in Completedtasks%}
           <div class="card m-1">
             <div class="card-body">
-              This is some Task
+              <!-- we can simply use [:20] this will give error we have to do it like this -->
+              {{ task.task|slice:":20" }}
               <span style="position: relative; float: right">
                 <a class="btn btn-success"
                   ><i class="fa fa-check"></i> Mark as Done</a
@@ -46,6 +48,7 @@
               </span>
             </div>
           </div>
+          {% endfor %}
         </div>
         <div class="col-md-5 col-lg-5">
           <h5>Completed Tasks</h5>
