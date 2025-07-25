@@ -34,7 +34,7 @@
         <p class="text-muted">{% now "jS F Y" %}</p>
         <div class="col-md-7 col-lg-7" style="height: 450px; overflow: scroll">
           <!-- List of all the tasks for the day -->
-          {% for task in Completedtasks%}
+          {% for task in NotCompletedtasks%}
           <div class="card m-1">
             <div class="card-body">
               <!-- we can simply use [:20] this will give error we have to do it like this -->
@@ -66,15 +66,14 @@
           <!-- To Do Form -->
           <!-- we are sending data to server that is why we are using method post -->
           <form action="{% url 'addTask' %}" method="POST">
-            <!-- Cross-Site Request Forgery -->
             {% csrf_token %}
             <div class="form-group">
               <span style="display: flex">
                 <input
                   type="text"
+                  name="task"
                   class="form-control"
                   placeholder="Add a task"
-                  name="task"
                 />
                 <button
                   type="submit"
