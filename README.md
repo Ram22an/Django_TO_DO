@@ -35,7 +35,7 @@ Make sure you have **Python 3.x** and **pip** installed on your system.
 Clone this repository to your local machine using Git.
 
 ```bash
-git clone [https://github.com/Ram22an/Django_TO_DO.git](https://github.com/Ram22an/Django_TO_DO.git)
+git clone https://github.com/Ram22an/Django_TO_DO.git
 cd Django_TO_DO
 ```
 ### 3. Create a Virtual Environment
@@ -78,3 +78,10 @@ python manage.py runserver
 **⚪** To update a task: Click the "Update" button next to a task, modify it on the new page, and save.
 
 **⚪** To delete a task: Click the "Delete" button next to a task you want to remove.
+
+## **Author 👨‍💻**
+
+**GitHub**: [Ram22an](https://github.com/Ram22an)
+
+Feel free to fork the project, raise issues, or suggest improvements.
+
